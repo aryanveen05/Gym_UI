@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym_UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+            background: url(img/Chris-Bumstead.jpg) no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 36px;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .left img {
+            width: 60px;
+            filter: brightness(2.5);
+        }
+
+        .left div {
+            text-align: center;
+            font-size: 26px;
+            line-height: 25px;
+        }
+
+        .mid {
+            display: block;
+        }
+
+        .right {
+            display: flex;
+            gap: 6px;
+        }
+
+        .navbar {
+            display: inline-block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 23px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            text-decoration: underline;
+            color: grey;
+        }
+
+        .btn {
+            font-family: "Roboto Condensed", sans-serif;
+            margin: 0px 2px;
+            background-color: black;
+            color: white;
+            padding: 5px 14px;
+            border: 2px solid grey;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(72, 71, 71);
+        }
+
+        .container {
+            border: 2px solid white;
+            margin: 90px auto;
+            padding: 40px 70px;
+            width: 34%;
+            min-width: 280px;
+            border-radius: 28px;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .formgroup label {
+            display: block;
+            margin: 8px auto 2px;
+            width: 100%;
+            max-width: 508px;
+        }
+
+        .formgroup input,
+        .formgroup select {
+            text-align: center;
+            display: block;
+            width: 100%;
+            max-width: 508px;
+            padding: 6px;
+            border: 2px solid black;
+            margin: 4px auto;
+            font-size: 20px;
+            border-radius: 8px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .container button {
+            display: block;
+            width: 23%;
+            min-width: 100px;
+            margin: 15px auto 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/gym_icon.jpg" alt="Aryan Fitness logo">
+            <div>FitSync</div>
+        </div>
+        <!-- Mid box for navigation -->
+        <nav class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- Right box for buttons  -->
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Join the best gym of Dehradun now.</h1>
+            <form action="noaction.php" method="post">
+                <div class="formgroup">
+                    <label for="fullname">Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your Name" required>
+                </div>
+                <div class="formgroup">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your Age" min="10" max="100" required>
+                </div>
+                <div class="formgroup">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="formgroup">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" placeholder="Enter your Contact Number"
+                        pattern="[0-9]{10}" required>
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
